@@ -10,7 +10,7 @@
         <PackageTags>Avalonia, Stories</PackageTags>
         <PackageId>Pwa.Stories</PackageId>
         <PackageProjectUrl>https://github.com/vzolotov/Avalonia.Stories</PackageProjectUrl>
-        <PackageLicenseUrl>https://github.com/vzolotov/Avalonia.Stories/blob/main/LICENSE</PackageLicenseUrl>
+        <PackageLicenseUrl></PackageLicenseUrl>
         <RepositoryUrl>https://github.com/vzolotov/Avalonia.Stories</RepositoryUrl>
     </PropertyGroup>
 
