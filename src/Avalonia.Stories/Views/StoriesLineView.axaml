@@ -1,0 +1,29 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:internals="clr-namespace:Avalonia.Stories.Views.Internals"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Avalonia.Stories.Views.StoriesLineView">
+    <ItemsControl x:Name="images" Margin="10" >
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <StackPanel Orientation="Vertical" Tapped="InputElement_OnTapped" VerticalAlignment="Center">
+                    <internals:StoriesAnimatedBar
+                        Minimum="0"
+                        Maximum="8000"
+                        IsWorked="{Binding IsStarted}"
+                        Completed="StoriesAnimatedBar_OnCompleted"/>
+                    <internals:StoriesImage
+                        DataContext="{Binding}"
+                        x:Name="image"/>
+                </StackPanel>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <WrapPanel Orientation="Horizontal"/>
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+    </ItemsControl>
+</UserControl>

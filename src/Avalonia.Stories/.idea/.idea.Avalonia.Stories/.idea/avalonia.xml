@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="../Avalonia.Stories.Demo/App.axaml" value="../Avalonia.Stories.Demo/Avalonia.Stories.Demo.csproj" />
+        <entry key="../Avalonia.Stories.Demo/MainWindow.axaml" value="../Avalonia.Stories.Demo/Avalonia.Stories.Demo.csproj" />
+        <entry key="Views/Internals/StoriesImage.axaml" value="../Avalonia.Stories.Demo/Avalonia.Stories.Demo.csproj" />
+        <entry key="Views/StoriesLineView.axaml" value="../Avalonia.Stories.Demo/Avalonia.Stories.Demo.csproj" />
+        <entry key="Views/StoriesView.axaml" value="../Avalonia.Stories.Demo/Avalonia.Stories.Demo.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
