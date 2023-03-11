@@ -1,8 +1,9 @@
 name: Release to NuGet
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - main # Default release branch, may also be named 'master' or 'develop'
 
 jobs:
   build:
@@ -12,7 +13,7 @@ jobs:
     steps:
 
       - name: Checkout repository
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Setup .NET Core @ Latest
         uses: actions/setup-dotnet@v1
