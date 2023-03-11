@@ -30,7 +30,7 @@ namespace Avalonia.Stories.Views
 
             IsStartedProperty
                 .Changed
-                .Where(x => x.IsEffectiveValueChange)
+                .Where(x => x.NewValue.Value != x.OldValue.Value)
                 .Subscribe(x =>
                 {
                     if (x.NewValue.Value)

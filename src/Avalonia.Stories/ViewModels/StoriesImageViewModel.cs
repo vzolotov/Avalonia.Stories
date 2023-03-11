@@ -7,6 +7,11 @@ namespace Avalonia.Stories.ViewModels
 {
     public class StoriesImageViewModel : ReactiveObject, IStoriesImage
     {
+        /// <summary>
+        /// Image view model
+        /// </summary>
+        /// <param name="text">image description</param>
+        /// <param name="image">image url</param>
         public StoriesImageViewModel(string text, Uri image)
         {
             Text = text;
@@ -15,7 +20,7 @@ namespace Avalonia.Stories.ViewModels
 
         [Reactive] public string Text { get; set; }
         [Reactive] public Uri Image { get; set; }
-        [Reactive] internal protected bool IsStarted { get; set; }
+        [Reactive] protected internal bool IsStarted { get; set; }
         
     }
 }

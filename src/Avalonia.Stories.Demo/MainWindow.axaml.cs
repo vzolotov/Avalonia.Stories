@@ -1,5 +1,6 @@
 using System;
 using Avalonia.Controls;
+using Avalonia.Markup.Xaml;
 using Avalonia.Stories.Views;
 
 namespace Avalonia.Stories.Demo
@@ -9,8 +10,8 @@ namespace Avalonia.Stories.Demo
         private StoriesView? _view;
         public MainWindow()
         {
-            InitializeComponent();
-            _view = this.FindControl<StoriesView>("stories");
+            AvaloniaXamlLoader.Load(this);
+            _view = this.FindControl<StoriesView>("stories1");
             this.Activated += OnActivated;
             
 #if DEBUG
@@ -21,7 +22,7 @@ namespace Avalonia.Stories.Demo
         private void OnActivated(object? sender, EventArgs e)
         {
             this.Activated -= OnActivated;
-            stories.IsStarted = true;
+            _view.IsStarted = true;
         }
     }
 }

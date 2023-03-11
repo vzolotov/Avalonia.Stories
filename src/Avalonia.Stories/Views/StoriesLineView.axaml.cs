@@ -22,7 +22,7 @@ namespace Avalonia.Stories.Views
             _images = this.FindControl<ItemsControl>("images");
             ItemsProperty
                 .Changed
-                .Where(x => x.IsEffectiveValueChange)
+                .Where(x => x.NewValue.Value != x.OldValue.Value)
                 .Subscribe(arg =>
                 {
                     if (_images != null) _images.Items = arg?.NewValue.Value;
@@ -30,7 +30,7 @@ namespace Avalonia.Stories.Views
             
             CurrentItemProperty
                 .Changed
-                .Where(x => x.IsEffectiveValueChange)
+                .Where(x => x.NewValue.Value != x.OldValue.Value)
                 .Subscribe(x =>
                 {
                     if (x.OldValue.Value != null)
