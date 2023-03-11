@@ -10,9 +10,14 @@
         <PackageTags>Avalonia, Stories</PackageTags>
         <PackageId>Pwa.Stories</PackageId>
         <PackageProjectUrl>https://github.com/vzolotov/Avalonia.Stories</PackageProjectUrl>
-        <PackageLicenseUrl></PackageLicenseUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <RepositoryUrl>https://github.com/vzolotov/Avalonia.Stories</RepositoryUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="AsyncImageLoader.Avalonia" Version="3.0.0-avalonia11-preview3" />
