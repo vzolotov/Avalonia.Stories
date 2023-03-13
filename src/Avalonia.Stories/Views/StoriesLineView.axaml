@@ -23,7 +23,8 @@
                         Width="{Binding #image.Width}"/>
                     <internals:StoriesImage
                         DataContext="{Binding}"
-                        x:Name="image"/>
+                        x:Name="image"
+                        IsDescriptionVisible="{Binding ElementName=storiesLine, Path=IsDescriptionVisible}"/>
                 </StackPanel>
             </DataTemplate>
         </ItemsControl.ItemTemplate>

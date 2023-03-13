@@ -61,7 +61,16 @@ namespace Avalonia.Stories.Views
             get => GetValue(DurationSecondsProperty);
             set => SetValue(DurationSecondsProperty, value);
         }
+        
+        public static readonly StyledProperty<bool> IsDescriptionVisibleProperty =
+            StoriesLineView.IsDescriptionVisibleProperty.AddOwner<StoriesLineView>();
 
+        public bool IsDescriptionVisible
+        {
+            get => GetValue(IsDescriptionVisibleProperty);
+            set => SetValue(IsDescriptionVisibleProperty, value);
+        }
+        
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);

@@ -8,13 +8,14 @@
     xmlns:asyncImageLoader="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
     mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
     x:Class="Avalonia.Stories.Views.StoriesView"
-    x:Name="storiesiew">
+    x:Name="storiesView">
     <Grid RowDefinitions="Auto, *">
             <views:StoriesLineView 
                 x:Name="line" 
                 x:FieldModifier="protected" 
                 Items="{Binding Items}"
-                DurationSeconds="{Binding ElementName=storiesView, Path=DurationSeconds}"/>
+                DurationSeconds="{Binding ElementName=storiesView, Path=DurationSeconds}"
+                IsDescriptionVisible="{Binding ElementName=storiesView, Path=IsDescriptionVisible}"/>
             <Carousel Grid.Row="1"
                       x:Name="carousel"
                       x:FieldModifier="protected" 

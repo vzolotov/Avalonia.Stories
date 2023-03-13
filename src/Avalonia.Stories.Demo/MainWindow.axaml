@@ -11,6 +11,8 @@
         <demo:MainViewModel/>
     </Window.DataContext>
     <views:StoriesView
+        DurationSeconds="10"
+        IsDescriptionVisible="True"
         x:Name="stories1" 
         IsStarted="True"
         DataContext="{Binding}"/>

@@ -116,6 +116,15 @@ namespace Avalonia.Stories.Views
             set => SetValue(DurationSecondsProperty, value);
         }
 
+        public static readonly StyledProperty<bool> IsDescriptionVisibleProperty =
+            StoriesImage.IsDescriptionVisibleProperty.AddOwner<StoriesLineView>();
+
+        public bool IsDescriptionVisible
+        {
+            get => GetValue(IsDescriptionVisibleProperty);
+            set => SetValue(IsDescriptionVisibleProperty, value);
+        }
+        
         public void Start()
         {
             if (CurrentItem == null)
@@ -139,16 +148,16 @@ namespace Avalonia.Stories.Views
             if (panel.DataContext == null) return;
             
             var story = panel.DataContext as StoriesImageViewModel;
-            if (Items != null && story != Items.Last() && story != null)
+            if (CurrentItem == story)
             {
-                for (var i = Items.IndexOf(story); i < SelectedIndex; i++)
-                {
-                    Items[i].IsStarted = false;
-                }
+                CurrentItem.IsStarted = !CurrentItem.IsStarted;
             }
-
-            CurrentItem = story;
-            if (CurrentItem != null) CurrentItem.IsStarted = true;
+            else
+            {
+                CurrentItem.IsStarted = false;
+                CurrentItem = story;
+                CurrentItem.IsStarted = true;
+            }
         }
 
         private void StoriesAnimatedBar_OnCompleted(object sender, EventArgs e)
