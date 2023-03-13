@@ -15,5 +15,7 @@
         Height="90"/>
     <TextBlock 
         Text="{Binding Text}"
+        TextAlignment="Center"
+        HorizontalAlignment="Stretch"
         IsVisible="{Binding IsDescriptionVisible, ElementName=parent}"/>
 </StackPanel>

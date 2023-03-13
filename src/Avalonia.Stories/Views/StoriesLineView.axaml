@@ -8,10 +8,10 @@
              d:DesignHeight="450"
              x:Class="Avalonia.Stories.Views.StoriesLineView"
              x:Name="storiesLine">
-    <ItemsControl x:Name="images" Margin="10" >
+    <ItemsControl x:Name="images" Margin="10" HorizontalAlignment="Center">
         <ItemsControl.ItemTemplate>
             <DataTemplate>
-                <StackPanel 
+                <StackPanel
                     Orientation="Vertical"
                     Tapped="InputElement_OnTapped" VerticalAlignment="Center">
                     <internals:StoriesAnimatedBar
