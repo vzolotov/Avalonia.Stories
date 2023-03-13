@@ -15,5 +15,25 @@ namespace Avalonia.Stories.Views.Internals
         {
             AvaloniaXamlLoader.Load(this);
         }
+        
+        public static readonly StyledProperty<bool> IsDescriptionVisibleProperty =
+            AvaloniaProperty.Register<StoriesImage, bool>(
+                nameof(IsDescriptionVisible), defaultValue: false);
+
+        public bool IsDescriptionVisible
+        {
+            get => GetValue(IsDescriptionVisibleProperty);
+            set => SetValue(IsDescriptionVisibleProperty, value);
+        }
+        
+        public static readonly StyledProperty<double> PreviewHeightProperty =
+            AvaloniaProperty.Register<StoriesImage, double>(
+                nameof(PreviewHeight), defaultValue:90);
+
+        public double PreviewHeight
+        {
+            get => GetValue(PreviewHeightProperty);
+            set => SetValue(PreviewHeightProperty, value);
+        }
     }
 }

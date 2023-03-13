@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Reactive.Linq;
 using Avalonia.Controls;
 using Avalonia.Styling;
@@ -9,6 +10,8 @@ namespace Avalonia.Stories.Views.Internals
 {
     public sealed class StoriesAnimatedBar : ProgressBar, IStyleable
     {
+        private const int StepMilliseconds = 150;
+        private double _stepValue;
         Type IStyleable.StyleKey => typeof(ProgressBar);
         private DispatcherTimer? _dispatcherTimer;
         public bool Started { get; private set; } = false;
@@ -52,12 +55,24 @@ namespace Avalonia.Stories.Views.Internals
             set => SetAndRaise(IsWorkedProperty, ref _isWorked, value);
         }
         
+        public static readonly StyledProperty<double> DurationSecondsProperty =
+            AvaloniaProperty.Register<StoriesLineView, double>(
+                nameof(DurationSeconds), defaultValue: 8.0);
+
+        public double DurationSeconds
+        {
+            get => GetValue(DurationSecondsProperty);
+            set => SetValue(DurationSecondsProperty, value);
+        }
+        
         void Start()
         {
             if (IsComplete || !Started)
-                _dispatcherTimer = new DispatcherTimer(TimeSpan.FromMilliseconds(300), DispatcherPriority.Layout,
+            {
+                _dispatcherTimer = new DispatcherTimer(TimeSpan.FromMilliseconds(StepMilliseconds), DispatcherPriority.Layout,
                     DispatcherTimerOnTick);
-            
+            }
+
             Started = true;
             Paused = false;
             _dispatcherTimer?.Start();
@@ -71,8 +86,11 @@ namespace Avalonia.Stories.Views.Internals
                 IsComplete = true;
                 Completed.Invoke(this, EventArgs.Empty);
             }
-
-            Value += _dispatcherTimer.Interval.TotalMilliseconds;
+            //it would be nice to put it in MaxSecondsProperty setter,
+            //but the order of calling avalonia properties is not defined
+            var interval = (DurationSeconds * 1000) / StepMilliseconds;
+            Value += Maximum / interval;
+            Debug.WriteLine(Value);
         }
 
 

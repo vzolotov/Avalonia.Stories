@@ -4,9 +4,16 @@ is similar like Instagram Stories
 
 [![Release to NuGet](https://github.com/vzolotov/Avalonia.Stories/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/vzolotov/Avalonia.Stories/actions/workflows/release.yml)
 
-The easiest way to get started is this:
+![Nuget](https://img.shields.io/nuget/dt/Pwa.Stories?label=Downloads&style=flat-square)
+## Nuget Package
 
-in view model
+To add __Avalonia.Stories__ to your project, along with all its functionality, you can use the following command:
+
+```
+dotnet add package Pwa.Stories
+```
+## The easiest way to get started is this:
+### in view model:
 ```cs
 public class MainViewModel : IStoriesViewModel
 {
@@ -20,11 +27,11 @@ public class MainViewModel : IStoriesViewModel
 } 
 ```
 
-in view
+### in view:
 
 ```xml
  <Window.DataContext>
-        <demo:MainViewModel/> <-- set data conxext
+        <demo:MainViewModel/> <-- set data context
     </Window.DataContext>
     <views:StoriesView
         x:Name="stories1" 

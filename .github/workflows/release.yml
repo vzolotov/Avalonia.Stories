@@ -28,4 +28,4 @@ jobs:
         run: dotnet nuget push out/*.nupkg --skip-duplicate --no-symbols true --api-key ${{secrets.NUGET_TOKEN}} -s https://api.nuget.org/v3/index.json
 
       - name: Push Package to GitHub.com
-        run: dotnet nuget push out/*.nupkg --skip-duplicate --no-symbols -k ${{ secrets.MY_TOKEN }} -s https://nuget.pkg.github.com/vzolotov/index.json
+        run: dotnet nuget push out/*.nupkg --skip-duplicate --no-symbols --api-key ${{ secrets.MY_TOKEN }} -s https://nuget.pkg.github.com/vzolotov/index.json

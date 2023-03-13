@@ -3,17 +3,24 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:internals="clr-namespace:Avalonia.Stories.Views.Internals"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="Avalonia.Stories.Views.StoriesLineView">
+             mc:Ignorable="d" 
+             d:DesignWidth="800" 
+             d:DesignHeight="450"
+             x:Class="Avalonia.Stories.Views.StoriesLineView"
+             x:Name="storiesLine">
     <ItemsControl x:Name="images" Margin="10" >
         <ItemsControl.ItemTemplate>
             <DataTemplate>
-                <StackPanel Orientation="Vertical" Tapped="InputElement_OnTapped" VerticalAlignment="Center">
+                <StackPanel 
+                    Orientation="Vertical"
+                    Tapped="InputElement_OnTapped" VerticalAlignment="Center">
                     <internals:StoriesAnimatedBar
                         Minimum="0"
-                        Maximum="8000"
+                        Maximum="800"
+                        DurationSeconds="{Binding ElementName=storiesLine, Path=DurationSeconds}"
                         IsWorked="{Binding IsStarted}"
-                        Completed="StoriesAnimatedBar_OnCompleted"/>
+                        Completed="StoriesAnimatedBar_OnCompleted"
+                        Width="{Binding #image.Width}"/>
                     <internals:StoriesImage
                         DataContext="{Binding}"
                         x:Name="image"/>

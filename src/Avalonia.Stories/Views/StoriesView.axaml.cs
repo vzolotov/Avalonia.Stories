@@ -53,6 +53,14 @@ namespace Avalonia.Stories.Views
             get => GetValue(IsStartedProperty);
             set => SetValue(IsStartedProperty, value);
         }
+        
+        public static readonly StyledProperty<double> DurationSecondsProperty =
+            StoriesLineView.DurationSecondsProperty.AddOwner<StoriesView>();
+        public double DurationSeconds
+        {
+            get => GetValue(DurationSecondsProperty);
+            set => SetValue(DurationSecondsProperty, value);
+        }
 
         private void InitializeComponent()
         {

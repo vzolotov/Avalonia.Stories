@@ -7,13 +7,14 @@
     xmlns:viewModels="clr-namespace:Avalonia.Stories.ViewModels"
     xmlns:asyncImageLoader="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
     mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-    x:Class="Avalonia.Stories.Views.StoriesView">
+    x:Class="Avalonia.Stories.Views.StoriesView"
+    x:Name="storiesiew">
     <Grid RowDefinitions="Auto, *">
             <views:StoriesLineView 
-                MaxHeight="100" 
                 x:Name="line" 
                 x:FieldModifier="protected" 
-                Items="{Binding Items}"/>
+                Items="{Binding Items}"
+                DurationSeconds="{Binding ElementName=storiesView, Path=DurationSeconds}"/>
             <Carousel Grid.Row="1"
                       x:Name="carousel"
                       x:FieldModifier="protected" 

@@ -3,9 +3,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:asyncImageLoader="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:internals="clr-namespace:Avalonia.Stories.Views.Internals"
+             mc:Ignorable="d"
              x:Class="Avalonia.Stories.Views.Internals.StoriesImage"
-             Orientation="Vertical" Spacing="5">
-    <Image asyncImageLoader:ImageLoader.Source="{Binding Image}" MaxHeight="90" MaxWidth="90"></Image>
-    <TextBlock Text="{Binding Text}"></TextBlock>
+             Orientation="Vertical" 
+             Spacing="5"
+             Margin="0"
+             x:Name="parent">
+    <Image 
+        asyncImageLoader:ImageLoader.Source="{Binding Image}" 
+        Height="90"/>
+    <TextBlock 
+        Text="{Binding Text}"
+        IsVisible="{Binding IsDescriptionVisible, ElementName=parent}"/>
 </StackPanel>

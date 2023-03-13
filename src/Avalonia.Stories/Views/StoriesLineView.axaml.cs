@@ -108,6 +108,14 @@ namespace Avalonia.Stories.Views
             set => SetValue(ItemTapCommandParameterProperty, value);
         }
 
+        public static readonly StyledProperty<double> DurationSecondsProperty =
+            StoriesAnimatedBar.DurationSecondsProperty.AddOwner<StoriesView>();
+        public double DurationSeconds
+        {
+            get => GetValue(DurationSecondsProperty);
+            set => SetValue(DurationSecondsProperty, value);
+        }
+
         public void Start()
         {
             if (CurrentItem == null)
