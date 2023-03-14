@@ -1,4 +1,4 @@
-# Avalonia.Stories for Avalonia
+# Avalonia.Stories for Avalonia 11
 
 is similar like Instagram Stories
 
