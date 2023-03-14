@@ -1,6 +1,8 @@
-# Avalonia.Stories
+# Avalonia.Stories for Avalonia
 
 is similar like Instagram Stories
+
+![](images/sample.png)
 
 [![Release to NuGet](https://github.com/vzolotov/Avalonia.Stories/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/vzolotov/Avalonia.Stories/actions/workflows/release.yml)
 

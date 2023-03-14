@@ -1,9 +1,8 @@
 using System;
 using System.Collections.ObjectModel;
 using Avalonia.Stories.ViewModels;
-using ReactiveUI;
 
-namespace Avalonia.Stories.Demo;
+namespace Avalonia.Stories.Demo.Views;
 
 public class MainViewModel : IStoriesViewModel
 {
